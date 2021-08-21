@@ -7,8 +7,8 @@ function Home() {
     <div className="page">
       <h1>Home</h1>
       <div className="container">
-        <Gameboard player={'one'} />
-        <Gameboard player={'two'} />
+        <Gameboard player={'name1'} />
+        {/* <Gameboard player={'name2'} /> */}
       </div>
     </div>
   );
