@@ -1,0 +1,13 @@
+.page {
+  padding: 1em;
+  background-color: #000;
+  flex: 1;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid gray;
+  height: 60%;
+  padding: 0.5em 1em;
+}

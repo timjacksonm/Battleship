@@ -1,0 +1,9 @@
+.grid-container {
+  margin: 1em;
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+}
+.grid-item {
+  border: 1px solid limegreen;
+  padding: 2vh;
+}
