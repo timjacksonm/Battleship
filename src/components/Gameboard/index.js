@@ -3,8 +3,6 @@ import Ship from '../Data/Ships';
 import './index.css';
 
 const Gameboard = (props) => {
-  const [target, setTarget] = useState();
-
   const Submarine1 = Ship('Submarine', ['1']);
   const Submarine2 = Ship('Submarine', ['11']);
   const Destroyer1 = Ship('Destroyer', ['21', '22']);
@@ -56,14 +54,6 @@ const Gameboard = (props) => {
     return array;
   })();
 
-  useEffect(() => {
-    if (target) {
-      const { id, hit } = target;
-
-      console.log(id, hit);
-    }
-    return () => {};
-  }, [target]);
   console.log(Ships);
   return <div className="grid-container">{cellArray.map((cell) => cell)}</div>;
 };
