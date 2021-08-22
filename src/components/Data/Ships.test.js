@@ -1,4 +1,3 @@
-import { expect } from '@jest/globals';
 import Ship from './Ships';
 
 test('identify object receives type and posistion', () => {
