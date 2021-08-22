@@ -1,0 +1,20 @@
+.grid-container {
+  margin: 1em;
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+}
+.grid-item {
+  border: 1px solid rgb(30, 150, 30);
+  padding: 2vh;
+  background-color: transparent;
+}
+.grid-item:hover {
+  border-style: double;
+  border-color: skyblue;
+}
+.hit {
+  background-color: #ff073a;
+}
+.miss {
+  background-color: #4666ff;
+}
