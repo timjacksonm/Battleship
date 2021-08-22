@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Ship from '../Data/Ships';
+import React from 'react';
 import './index.css';
 
-const Gameboard = (props) => {
+const Grid = (props) => {
   const cellArray = (() => {
     const array = [];
     for (let i = 0; i < 100; i++) {
@@ -14,4 +13,4 @@ const Gameboard = (props) => {
   return <div className="grid-container">{cellArray.map((cell) => cell)}</div>;
 };
 
-export default Gameboard;
+export default Grid;

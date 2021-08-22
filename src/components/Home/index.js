@@ -1,5 +1,6 @@
 import React from 'react';
-import Gameboard from '../Gameboard';
+import Grid from '../Grid';
+import Gameboard from '../Data/Gameboard';
 import './index.css';
 
 function Home() {
@@ -7,8 +8,8 @@ function Home() {
     <div className="page">
       <h1>Home</h1>
       <div className="container">
-        <Gameboard player={'name1'} />
-        {/* <Gameboard player={'name2'} /> */}
+        <Grid name={'bob'} />
+        <Grid name={'jake'} />
       </div>
     </div>
   );
