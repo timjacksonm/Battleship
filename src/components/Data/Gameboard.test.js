@@ -1,14 +1,3 @@
-//Gameboard should be able to place ships at
-//specific coordinates by calling the ship factory function
-
-//Gameboards should have a recieve attack funciton
-//that takes a pair of coorrdinates, detmines whether or not hte attack hit a ship
-//and sends the 'hit' function to the correcft ship, or records the coordintes
-//of hte missed shot
-
-//Gameboard should kepe track of missed ttacks so they can display them properly
-//Gameboards should be able to reprot weather or not all ships have sunk
-
 import Gameboard from './Gameboard';
 const player1 = Gameboard();
 player1.placeShip('Submarine1', ['1']);
