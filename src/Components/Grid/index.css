@@ -8,6 +8,9 @@
   padding: 2vh;
   background-color: transparent;
 }
+/* .grid-item:hover {
+  background-color: skyblue;
+} */
 .selected {
   background-color: skyblue;
 }
