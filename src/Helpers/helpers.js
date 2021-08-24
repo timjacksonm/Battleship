@@ -1,0 +1,2 @@
+const highlightHover = () => {};
+export { highlightHover };

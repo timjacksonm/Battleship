@@ -8,9 +8,8 @@
   padding: 2vh;
   background-color: transparent;
 }
-.grid-item:hover {
-  border-style: double;
-  border-color: skyblue;
+.selected {
+  background-color: skyblue;
 }
 .hit {
   background-color: #ff073a;
