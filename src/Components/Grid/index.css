@@ -8,11 +8,14 @@
   padding: 2vh;
   background-color: transparent;
 }
-/* .grid-item:hover {
+.grid-item:hover {
+  border: 1px double skyblue;
+}
+.highlighted {
   background-color: skyblue;
-} */
+}
 .selected {
-  background-color: skyblue;
+  background-color: limegreen;
 }
 .hit {
   background-color: #ff073a;

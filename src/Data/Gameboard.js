@@ -32,8 +32,8 @@ const Gameboard = (string) => {
         return false;
       });
       hit
-        ? (event.target.classList += ' hit')
-        : (event.target.classList += ' miss');
+        ? (event.target.classList = 'grid-item hit')
+        : (event.target.classList = 'grid-item miss');
       event.target.disabled = true;
     },
     checkLoss: function () {
