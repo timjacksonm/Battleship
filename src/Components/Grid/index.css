@@ -9,8 +9,13 @@
   background-color: transparent;
 }
 .grid-item:hover {
-  border-style: double;
-  border-color: skyblue;
+  border: 1px double skyblue;
+}
+.highlighted {
+  background-color: skyblue;
+}
+.selected {
+  background-color: limegreen;
 }
 .hit {
   background-color: #ff073a;

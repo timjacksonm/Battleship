@@ -7,10 +7,10 @@ player1.placeShip('Aircraft Carrier', ['61', '62', '63', '64', '65']);
 test('Removes from availableToPlace & checks Hull position is logged', () => {
   expect(player1.Ships[2].hull).toContain('62' && '63');
   expect(player1.availableToPlace).toStrictEqual([
-    'Submarine2',
-    'Destroyer2',
-    'Cruiser',
-    'Battleship',
+    { name: 'Submarine2', length: 1 },
+    { name: 'Destroyer2', length: 2 },
+    { name: 'Cruiser', length: 3 },
+    { name: 'Battleship', length: 4 },
   ]);
 });
 test('Checkloss function returns boolean value', () => {

@@ -5,9 +5,16 @@
 }
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border: 1px solid gray;
   height: 60%;
   padding: 0.5em 1em;
+}
+.names {
+  display: flex;
+  justify-content: space-around;
+}
+.flex {
+  flex: 1;
 }
