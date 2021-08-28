@@ -46,7 +46,7 @@ const saveSelected = (
   setStartGame
 ) => {
   if (selected) {
-    const placement = selected.map((cell) => cell.id);
+    const placement = selected.map((cell) => Number(cell.id));
     player.placeShip(currentShip.name, placement);
     selected.forEach((element) => {
       element.className = 'grid-item selected';
@@ -63,11 +63,12 @@ const saveSelected = (
   setCurrentShip(player.availableToPlace[0]);
 };
 
+function random(min, max) {
+  const num = Math.floor(Math.random() * (max - min + 1)) + min;
+  return num;
+}
+
 const getRandomTarget = (object) => {
-  function random(min, max) {
-    const num = Math.floor(Math.random() * (max - min + 1)) + min;
-    return num;
-  }
   let randomNumber = random(1, 100);
   while (
     object.current.children[randomNumber - 1].classList.contains('miss') ||
@@ -78,4 +79,83 @@ const getRandomTarget = (object) => {
   return randomNumber;
 };
 
-export { highlightSelected, removeSelected, saveSelected, getRandomTarget };
+const getRandomPlacements = () => {
+  const rows = {
+    horizontal: [
+      { A: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+      { B: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20] },
+      { C: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30] },
+      { D: [31, 32, 33, 34, 35, 36, 37, 38, 39, 40] },
+      { E: [41, 42, 43, 44, 45, 46, 47, 48, 49, 50] },
+      { F: [51, 52, 53, 54, 55, 56, 57, 58, 59, 60] },
+      { G: [61, 62, 63, 64, 65, 66, 67, 68, 69, 70] },
+      { H: [71, 72, 73, 74, 75, 76, 77, 78, 79, 80] },
+      { I: [81, 82, 83, 84, 85, 86, 87, 88, 89, 90] },
+      { J: [91, 92, 93, 94, 95, 96, 97, 98, 99, 100] },
+    ],
+    vertical: {},
+  };
+  let {
+    submarine1,
+    submarine2,
+    destroyer1,
+    destroyer2,
+    cruiser,
+    battelship,
+    aircraftcarrier,
+  } = {
+    submarine1: { length: 1, position: [] },
+    submarine2: { length: 1, position: [] },
+    destroyer1: { length: 2, position: [] },
+    destroyer2: { length: 2, position: [] },
+    cruiser: { length: 3, position: [] },
+    battelship: { length: 4, position: [] },
+    aircraftcarrier: { length: 5, position: [] },
+  };
+  const selectors = [
+    submarine1,
+    submarine2,
+    destroyer1,
+    destroyer2,
+    cruiser,
+    battelship,
+    aircraftcarrier,
+  ];
+  const availableCells = [];
+  for (let i = 0; i < 100; i++) {
+    availableCells.push(i + 1);
+  }
+  for (let i = 0; i < selectors.length; i++) {
+    let min = random(1, 100);
+    let max = min + selectors[i].length;
+
+    if (
+      availableCells.includes(min) &&
+      rows.horizontal.some(
+        (row) =>
+          row[Object.keys(row)].includes(min) &&
+          row[Object.keys(row)].includes(max)
+      )
+    ) {
+      const index = availableCells.indexOf(min);
+      selectors[i].position = availableCells.splice(index, selectors[i].length);
+    } else i--;
+  }
+  return {
+    submarine1,
+    submarine2,
+    destroyer1,
+    destroyer2,
+    cruiser,
+    battelship,
+    aircraftcarrier,
+  };
+};
+
+export {
+  highlightSelected,
+  removeSelected,
+  saveSelected,
+  getRandomTarget,
+  getRandomPlacements,
+};

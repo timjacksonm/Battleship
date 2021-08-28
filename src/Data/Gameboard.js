@@ -25,8 +25,8 @@ const Gameboard = (string) => {
     },
     receiveAttack: function (event) {
       const hit = this.Ships.find((ship) => {
-        if (ship.hull.includes(event.target.id)) {
-          ship.hit(event.target.id);
+        if (ship.hull.includes(Number(event.target.id))) {
+          ship.hit(Number(event.target.id));
           return true;
         }
         return false;

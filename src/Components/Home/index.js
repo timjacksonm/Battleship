@@ -1,23 +1,32 @@
 import React, { useState } from 'react';
 import Grid from '../Grid';
 import Gameboard from '../../Data/Gameboard';
+import { getRandomPlacements } from '../../Helpers/helpers';
 import './index.css';
 const player = Gameboard('Player1');
 const computer = Gameboard('Computer');
-computer.placeShip('Submarine1', ['1']);
-computer.placeShip('Submarine2', ['3']);
-computer.placeShip('Destroyer1', ['11', '12']);
-computer.placeShip('Destroyer2', ['14', '15']);
-computer.placeShip('Cruiser', ['25', '26', '27']);
-computer.placeShip('Battleship', ['35', '36', '37', '38']);
-computer.placeShip('Aircraft Carrier', ['41', '42', '43', '44', '45']);
+const {
+  submarine1,
+  submarine2,
+  destroyer1,
+  destroyer2,
+  cruiser,
+  battelship,
+  aircraftcarrier,
+} = getRandomPlacements();
+computer.placeShip('Submarine1', submarine1.position);
+computer.placeShip('Submarine2', submarine2.position);
+computer.placeShip('Destroyer1', destroyer1.position);
+computer.placeShip('Destroyer2', destroyer2.position);
+computer.placeShip('Cruiser', cruiser.position);
+computer.placeShip('Battleship', battelship.position);
+computer.placeShip('Aircraft Carrier', aircraftcarrier.position);
 
 function Home() {
   const [currentShip, setCurrentShip] = useState(player.availableToPlace[0]);
   const [rotation, setRotation] = useState('horizontal');
   const [startGame, setStartGame] = useState(false);
   const [turn, setTurn] = useState('Player1');
-
   return (
     <div className="page">
       <h1>Battleship</h1>
