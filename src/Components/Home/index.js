@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from '../Grid';
 import Gameboard from '../../Data/Gameboard';
 import { getRandomPlacements } from '../../Helpers/helpers';
@@ -28,9 +28,19 @@ function Home() {
   const [startGame, setStartGame] = useState(false);
   const [turn, setTurn] = useState('Player1');
   const [titleText, setTitleText] = useState('Click enemy grid to fire!');
+  const [resetBtn, setResetBtn] = useState(false);
+
+  useEffect(() => {
+    if (titleText !== 'Click enemy grid to fire!') {
+      setResetBtn(true);
+    }
+  }, [titleText]);
   return (
     <div className="page">
       <h1>Battleship</h1>
+      {resetBtn && (
+        <button onClick={() => window.location.reload()}>Reset Game!</button>
+      )}
       {!startGame ? (
         <h2>
           place your <p>{currentShip.name}</p>
