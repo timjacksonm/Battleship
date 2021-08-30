@@ -8,8 +8,15 @@ import {
 import './index.css';
 
 const Grid = (props) => {
-  const { player, currentShip, setCurrentShip, setStartGame, turn, setTurn } =
-    props;
+  const {
+    player,
+    currentShip,
+    setCurrentShip,
+    setStartGame,
+    turn,
+    setTurn,
+    setTitleText,
+  } = props;
   const [selected, setSelected] = useState();
   const [player1Container] = useState(React.createRef());
   const [computerContainer] = useState(React.createRef());
@@ -51,12 +58,11 @@ const Grid = (props) => {
           key={i}
           className="grid-item"
           onClick={(e) => {
-            if (turn === 'Player1') {
+            if (player.checkLoss()) {
+              setTitleText(`${player.board} Lost You Win!`);
+            } else {
               player.receiveAttack(e);
-              const result = player.checkLoss();
-              result === true
-                ? alert(`${player.name} Lost!`)
-                : setTurn('Computer');
+              setTurn('Computer');
             }
           }}
         ></button>
@@ -66,25 +72,33 @@ const Grid = (props) => {
   })();
 
   useEffect(() => {
-    if (turn === 'Computer' && player.name === 'Player1') {
+    if (
+      turn === 'Computer' &&
+      player.board === 'Player1' &&
+      !player.checkLoss()
+    ) {
       const randomNumber = getRandomTarget(player1Container);
       player.receiveAttack({
         target: player1Container.current.children[randomNumber - 1],
       });
-      const result = player.checkLoss();
-      result === true ? alert(`${player.name} Lost!`) : setTurn('Computer');
       setTurn('Player1');
     }
-    return () => {};
-  }, [turn, player, setTurn, player1Container]);
+    if (
+      turn === 'Computer' &&
+      player.board === 'Player1' &&
+      player.checkLoss()
+    ) {
+      setTitleText(`${player.board} Lost! Computer Wins!`);
+    }
+  }, [turn, player, setTurn, player1Container, setTitleText]);
 
   return (
     <div
       className="grid-container"
-      id={player.name}
-      ref={player.name === 'Player1' ? player1Container : computerContainer}
+      id={player.board}
+      ref={player.board === 'Player1' ? player1Container : computerContainer}
     >
-      {player.name === 'Player1'
+      {player.board === 'Player1'
         ? playerGrid.map((cell) => cell)
         : computerGrid.map((cell) => cell)}
     </div>

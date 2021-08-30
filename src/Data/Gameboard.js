@@ -2,7 +2,7 @@ import Ship from './Ships';
 
 const Gameboard = (string) => {
   return {
-    name: string,
+    board: string,
     availableToPlace: [
       { name: 'Submarine1', length: 1 },
       { name: 'Submarine2', length: 1 },

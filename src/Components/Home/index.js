@@ -27,6 +27,7 @@ function Home() {
   const [rotation, setRotation] = useState('horizontal');
   const [startGame, setStartGame] = useState(false);
   const [turn, setTurn] = useState('Player1');
+  const [titleText, setTitleText] = useState('Click enemy grid to fire!');
   return (
     <div className="page">
       <h1>Battleship</h1>
@@ -35,27 +36,33 @@ function Home() {
           place your <p>{currentShip.name}</p>
         </h2>
       ) : (
-        <h2>Click enemy grid to fire!</h2>
-      )}
-      {startGame && (
-        <div className="names">
-          <h2 className="flex">{player.name}</h2>
-          <h2>vs</h2>
-          <h2 className="flex">{computer.name}</h2>
-        </div>
+        <>
+          <h2>{titleText}</h2>
+          <div className="names">
+            <h2 className="flex">{player.board}</h2>
+            <h2>vs</h2>
+            <h2 className="flex">{computer.board}</h2>
+          </div>
+        </>
       )}
       <div className="container">
         <Grid
           player={player}
           currentShip={currentShip}
           setCurrentShip={setCurrentShip}
-          rotation={rotation}
           setStartGame={setStartGame}
-          startGame={startGame}
           turn={turn}
           setTurn={setTurn}
+          setTitleText={setTitleText}
         />
-        {startGame && <Grid player={computer} turn={turn} setTurn={setTurn} />}
+        {startGame && (
+          <Grid
+            player={computer}
+            turn={turn}
+            setTurn={setTurn}
+            setTitleText={setTitleText}
+          />
+        )}
       </div>
     </div>
   );
