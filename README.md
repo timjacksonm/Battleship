@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+<h1 align="center">
+   <image src="/src/assets/" width="40%"> 
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">Battleship I used React, HTML, CSS & JavaScript for this project.</h4>
 
-## Available Scripts
+<p align="center">
+  <a href="#screenshots">Screenshots</a> •
+  <a href="#goals">Goals</a> •
+  <a href="#summary">Summary</a> •
+  <a href="#author">Author</a> •
+    <a href="#credits">Credits</a> •
+  <a href="#license">License</a>
+</p>
 
-In the project directory, you can run:
+### ✨ [Live Preview](https://timjacksonm.github.io/Battleship/)
 
-### `yarn start`
+## Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<details>
+  <summary>Show Image</summary>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<image src="/src/assets/.gif">
 
-### `yarn test`
+<image src="">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</details>
 
-### `yarn build`
+## Goals:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [✔️] Create a Ship factory function
+- [✔️] Create a Gameboard factory function
+- [✔️] Create two players with one being the computer
+- [✔️] Write test with Jest for the public interface of each object
+- [✔️] Create the main game loop
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**View Commits on project to see changes**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Summary
 
-### `yarn eject`
+The focus of this project was getting familiar writing TDD code. Writing test with jest was easy enough to pick up! I can't wait to get more familiar writing test first so I don't rely on console.logs as much in the future! The game of Battleship lets you place 2x submarines, 2x Destroyers, 1x Cruiser, 1x Battleship, 1x Aircraft Carrier on your board.
+Room for improvements: Allow user & computer player to place ship vertically. Add more styles.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Author
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤 **Tim Jackson**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Github: [@timjacksonm](https://github.com/timjacksonm)
+- Twitter [@timjacksonm](https://twitter.com/timjacksonm)
+- LinkedIn [@timjacksonm](https://linkedin.com/in/timjacksonm)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Credits
 
-## Learn More
+This project idea was a part of my studies at The Odin Project's curriculum. You can see the lesson <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/battleship" target="_blank">here</a>!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p>
+  <a href="https://choosealicense.com/licenses/mit/">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg">
+</p>
