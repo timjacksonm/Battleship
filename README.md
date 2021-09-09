@@ -1,5 +1,5 @@
 <h1 align="center">
-   <image src="/src/assets/" width="40%"> 
+   <image src="/src/assets/battleship-logo-png-transparent.png" width="40%"> 
 </h1>
 
 <h4 align="center">Battleship I used React, HTML, CSS & JavaScript for this project.</h4>
@@ -20,9 +20,9 @@
 <details>
   <summary>Show Image</summary>
 
-<image src="/src/assets/.gif">
+<image src="/src/assets/gameplay.gif">
 
-<image src="">
+<image src="/src/assets/screenshot.png">
 
 </details>
 
@@ -39,7 +39,7 @@
 ## Summary
 
 The focus of this project was getting familiar writing TDD code. Writing test with jest was easy enough to pick up! I can't wait to get more familiar writing test first so I don't rely on console.logs as much in the future! The game of Battleship lets you place 2x submarines, 2x Destroyers, 1x Cruiser, 1x Battleship, 1x Aircraft Carrier on your board.
-Room for improvements: Allow user & computer player to place ship vertically. Add more styles.
+Room for improvements: Allow user & computer player to place ship vertically. Add more styles. Add difficulty setting to computer.
 
 ## Author
 
